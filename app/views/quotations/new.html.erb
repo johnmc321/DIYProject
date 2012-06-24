@@ -1,0 +1,33 @@
+<%= provide(:title, 'Quotation Request') %>
+<h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Quotation Request</h1>
+
+<div>
+
+  <div class="inline" >
+
+    <%= form_for(@quotation) do |f| %>
+
+         <%= f.label :name %>  </br>
+        <%=  f.text_field :name %>
+
+
+
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+
+
+
+      <p>  <%= f.submit "Submit Request", class: "btn btn-large btn-primary" %> </p>
+
+
+    <% end %>
+
+
+  </div>
+
+
+</div>

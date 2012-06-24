@@ -1,0 +1,33 @@
+
+<%= provide(:title, 'Sign up') %>
+<h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Sign up</h1>
+
+<div>
+  <div class="inline">
+
+    <%= form_for(@user) do |f| %>
+
+      <br/> <%= f.label :name %>
+       <br/> <%= f.text_field :name %>
+
+
+      <br/><%= f.label :email %>
+       <br/> <%= f.text_field :email %>
+
+       <br/> <%= f.label :location %>
+        <br/><%= f.text_field :location %>
+
+       <br/><%= f.label :password %>
+       <br/> <%= f.password_field :password %>
+
+       <br/><%= f.label :password_confirmation, "Password Confirmation" %>
+       <br/><%= f.password_field :password_confirmation %>
+
+       <br/><%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+        <%= render 'shared/error_messages' %>
+
+    <% end %>
+
+  </div>
+</div>
