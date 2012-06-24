@@ -1,4 +1,6 @@
 ProjectMain::Application.routes.draw do
+  resources :orders
+
  # get "quotations/new"
   resources :line_items
   resources :carts
