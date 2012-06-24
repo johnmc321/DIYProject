@@ -9,14 +9,16 @@
     <%= form_for(@quotation) do |f| %>
         <%=  render 'shared/error_messages', object: f.object %>
 
-         <%= f.label :name %>  </br>
-        <%=  f.text_field :name %>
-         <%= f.label :email %>
-          <%= f.text_field :email %>
-         <%= f.label :location %>
-          <%= f.text_field :location %>
-
-
+         <%= f.label :name %>  <br/>
+        <%=  f.text_field :name %><br/>
+         <%= f.label :email %> <br/>
+          <%= f.text_field :email %><br/>
+         <%= f.label :location %> <br/>
+          <%= f.text_field :location %> <br/>
+          <%= f.label :description %><br/>
+          <%= f.text_area :description %><br/>
+          <%= f.label :jobtype, "Please select the general job type" %> <br/>
+           <%= f.select :jobtype, options_for_select(["select one", "Tiler", "Builder"], :class=>'genForm_dropBox') %>
 
       <p>  <%= f.submit "Submit Request", class: "btn btn-large btn-primary" %> </p>
 
