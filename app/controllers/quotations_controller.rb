@@ -9,7 +9,7 @@ class QuotationsController < ApplicationController
   end
 
   def create
-   # @quotation = Quotation.new(params[:quotation])
+
     @quotation = current_user.quotations.build(params[:quotation])
     if @quotation.save
       redirect_to root_path
