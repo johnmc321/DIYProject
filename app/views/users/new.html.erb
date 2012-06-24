@@ -7,7 +7,7 @@
   <div class="inline">
 
     <%= form_for(@user) do |f| %>
-
+      <%=  render 'shared/error_messages', object: f.object %>
       <br/> <%= f.label :name %>
        <br/> <%= f.text_field :name %>
 
@@ -25,7 +25,7 @@
        <br/><%= f.password_field :password_confirmation %>
 
        <br/><%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-        <%= render 'shared/error_messages' %>
+
 
     <% end %>
 
