@@ -17,6 +17,7 @@ ProjectMain::Application.routes.draw do
   match '/signin', to:'sessions#new'
   match '/sessions', to: 'sessions#new' # delete this after merge
   match '/quotations', to:'quotations#new'
+  match '/store/index', to: 'store#index', as: 'store'
 
 
   # The priority is based upon order of creation:
