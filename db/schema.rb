@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620100833) do
+ActiveRecord::Schema.define(:version => 20120621214811) do
+
+  create_table "carts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
   create_table "quotations", :force => true do |t|
     t.string   "name"
@@ -24,16 +45,18 @@ ActiveRecord::Schema.define(:version => 20120620100833) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "quotations", ["user_id", "created_at"], :name => "index_quotations_on_user_id_and_created_at"
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "string"
     t.string   "email"
+    t.integer  "quotation_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "location"
     t.string   "remember_token"
-    t.integer  "quotation_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
