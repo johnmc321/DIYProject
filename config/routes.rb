@@ -1,6 +1,11 @@
 ProjectMain::Application.routes.draw do
  # get "quotations/new"
+  resources :line_items
+  resources :carts
 
+  get "store/index"
+
+  resources :products
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :quotations, only: [:new, :create, :destroy]
@@ -10,7 +15,9 @@ ProjectMain::Application.routes.draw do
   match '/show', to: 'users#show'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signin', to:'sessions#new'
+  match '/sessions', to: 'sessions#new' # delete this after merge
   match '/quotations', to:'quotations#new'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
