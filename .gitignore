@@ -16,3 +16,5 @@
 
 #ignore all .idea files
 .idea/*
+
+.idea/workspace.xml
