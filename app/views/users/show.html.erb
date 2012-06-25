@@ -1,5 +1,8 @@
 <% provide(:title, @user.name) %>
 
 <h1> <%= @user.name %></h1>
-<%= @user.name %>, <%= @user.email %> <%= @user.location%>
-
+ <ul>
+    <li><%= @user.name %></li>
+    <li><%= @user.email %></li>
+    <li><%= @user.location%></li>
+ </ul>
