@@ -17,7 +17,10 @@
   </tr>
 </table>
 <!-- START_HIGHLIGHT -->
+<p></p>
+<%= button_to "Continue Shopping", store_path %>
 <%= button_to "Checkout", new_order_path, method: :get %>
+
 <!-- END_HIGHLIGHT -->
 <%= button_to 'Empty Basket', @cart, method: :delete,
     confirm: 'Are you sure?' %>
