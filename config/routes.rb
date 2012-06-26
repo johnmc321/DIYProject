@@ -7,7 +7,9 @@ ProjectMain::Application.routes.draw do
 
   get "store/index"
 
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :quotations, only: [:new, :create, :destroy]
@@ -20,6 +22,7 @@ ProjectMain::Application.routes.draw do
   match '/sessions', to: 'sessions#new' # delete this after merge
   match '/quotations', to:'quotations#new'
   match '/store/index', to: 'store#index', as: 'store'
+  match '/your_cart', to: 'carts#your_cart', as: 'your_cart'
 
 
   # The priority is based upon order of creation:
