@@ -1,4 +1,6 @@
 ProjectMain::Application.routes.draw do
+  resources :categories
+
   resources :orders
 
  # get "quotations/new"
@@ -13,6 +15,7 @@ ProjectMain::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :quotations, only: [:new, :create, :destroy]
+
 
   root :to => 'projectmain#home'
   match '/signup', to: 'users#new'

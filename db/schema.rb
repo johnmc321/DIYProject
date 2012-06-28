@@ -11,9 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626225036) do
+ActiveRecord::Schema.define(:version => 20120628223718) do
 
   create_table "carts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -44,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120626225036) do
     t.decimal  "price",       :precision => 8, :scale => 2
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "category_id"
   end
 
   create_table "quotations", :force => true do |t|
@@ -64,11 +71,13 @@ ActiveRecord::Schema.define(:version => 20120626225036) do
     t.string   "string"
     t.string   "email"
     t.integer  "quotation_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "location"
     t.string   "remember_token"
+    t.boolean  "admin",           :default => false
+    t.integer  "order_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

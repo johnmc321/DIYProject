@@ -28,18 +28,38 @@
  <ul>
     <li> <a href="http://www.youtube.com/embed/lPMHJOgm76M"  target="source">Soldering</a></li>
     <ul>
-      <li> <a href="frame2.html"  target="source">Required Tools </a> </li>
+
+      <li><%= link_to "Required Tools", categories_path %></li>
       <% if signed_in? %>
       <li><%= link_to "Request a Quotation", quotations_path %></li>
           <% end %>
     </ul>
 
-     <ul>
-    <li> Item 3 </li>
 
-      </ul>
  </ul>
+  <ul>
+    <li> <a href="http://www.youtube.com/embed/lPMHJOgm76M"  target="source">Tiling</a></li>
+    <ul>
+      <!--<li> <a href="frame2.html"  target="source">Required Tools </a> </li>-->
+      <li><%= link_to "Required Tools", categories_path %></li>
+      <% if signed_in? %>
+          <li><%= link_to "Request a Quotation", quotations_path %></li>
+      <% end %>
 
+    </ul>
+           </ul>
+
+  <ul>
+    <li> <a href="http://www.youtube.com/embed/lPMHJOgm76M"  target="source">Decking</a></li>
+    <ul>
+      <!--<li> <a href="frame2.html"  target="source">Required Tools </a> </li>-->
+      <li><%= link_to "Required Tools", categories_path %></li>
+      <% if signed_in? %>
+          <li><%= link_to "Request a Quotation", quotations_path %></li>
+      <% end %>
+
+    </ul>
+  </ul>
 
     </div>
 

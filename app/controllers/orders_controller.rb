@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+
+    @orders = current_user.orders
     @orders = Order.paginate page: params[:page], order: 'created_at desc',
         per_page: 10
 
@@ -48,6 +50,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = current_user.orders.new(params[:order])
+    @order.user_id = current_user.id
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
