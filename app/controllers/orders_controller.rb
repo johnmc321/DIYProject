@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(params[:order])
+    @order = current_user.orders.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
