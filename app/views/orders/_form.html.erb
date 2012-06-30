@@ -13,19 +13,19 @@
     <div class="field">
       <%= f.label :name %><br />
       <!-- START_HIGHLIGHT -->
-      <%= f.text_field :name, size: 40 %>
+      <%= f.text_field :name, :value=>current_user.name %>
       <!-- END_HIGHLIGHT -->
     </div>
     <div class="field">
       <%= f.label :address %><br />
       <!-- START_HIGHLIGHT -->
-      <%= f.text_area :address, rows: 3, cols: 40 %>
+      <%= f.text_area :address, rows: 3, cols: 40, :value=>current_user.location %>
       <!-- END_HIGHLIGHT -->
     </div>
     <div class="field">
       <%= f.label :email %><br />
       <!-- START_HIGHLIGHT -->
-      <%= f.email_field :email, size: 40 %>
+      <%= f.email_field :email, size: 40, :value=>current_user.email %>
       <!-- END_HIGHLIGHT -->
     </div>
     <div class="field">
