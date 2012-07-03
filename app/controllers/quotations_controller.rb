@@ -11,6 +11,12 @@ class QuotationsController < ApplicationController
   def create
 
     @quotation = current_user.quotations.build(params[:quotation])
+    @contractor = Contractor.find(:all)
+       @contractor.each do |i|
+    if((i.jobtype == @quotation.jobtype) && (i.location == @quotation.location))
+        @quotation.contractor_id = i.id
+    end
+    end
     if @quotation.save
       redirect_to root_path
     else

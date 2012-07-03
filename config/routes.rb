@@ -1,4 +1,6 @@
 ProjectMain::Application.routes.draw do
+
+
   resources :categories
 
   resources :orders
@@ -7,6 +9,7 @@ ProjectMain::Application.routes.draw do
   resources :line_items
   resources :carts
 
+
   get "store/index"
 
   resources :products do
@@ -14,8 +17,8 @@ ProjectMain::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
-  resources :quotations, only: [:new, :create, :destroy]
-
+  resources :quotations, only: [:new, :create, :destroy, :show]
+  resources :contractors, only: [:new, :create, :destroy, :show]
 
   root :to => 'projectmain#home'
   match '/signup', to: 'users#new'
@@ -26,7 +29,7 @@ ProjectMain::Application.routes.draw do
   match '/quotations', to:'quotations#new'
   match '/store/index', to: 'store#index', as: 'store'
   match '/your_cart', to: 'carts#your_cart', as: 'your_cart'
-
+  match '/contractors', to: 'contractors#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

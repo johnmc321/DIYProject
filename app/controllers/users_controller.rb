@@ -6,8 +6,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @quotation = Quotation.find(:all, :conditions => {:user_id =>@user.id}, :order=>"created_at" )
 
-  end
+
+    end
+
 
   def create
     @user = User.new(params[:user])
