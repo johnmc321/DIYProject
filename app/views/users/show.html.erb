@@ -7,5 +7,10 @@
     <li><%= @user.location%></li>
 </ul>
 
-<%=  @quotation%>
-
+<% @quotation.each do|quotation|%> <br/>
+    <%= quotation.name %><br/>
+    <%=  quotation.email%> <br/>
+    <%= quotation.location%> <br/>
+    <%= quotation.jobtype%> <br/>
+    <%= quotation.contractor_id%> <br/>
+    <%end %>

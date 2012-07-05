@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @quotation = Quotation.find(:all, :conditions => {:user_id =>@user.id}, :order=>"created_at" )
+    @quotation = Quotation.find(:all, :conditions => {:user_id => current_user.id})
 
 
     end
