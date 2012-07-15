@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
 
     @orders = current_user.orders
     @orders = Order.paginate page: params[:page], order: 'created_at desc',
-        per_page: 10
+        per_page: 20
 
     respond_to do |format|
       format.html # index.html.erb

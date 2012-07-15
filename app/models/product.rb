@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
       with: %r{\.(gif|jpg|png)$}i,
   message: 'must be a URL for GIF, JPG or PNG image.'
   }
-  validates :title, length: {minimum: 10}
+  validates :title, length: {minimum: 3}
   private
 
   # ensure that there are no line items referencing this product
