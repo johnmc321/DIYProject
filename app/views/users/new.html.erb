@@ -1,33 +1,64 @@
+<h2><%= provide(:title, 'Sign up') %></h2>
 
-<%= provide(:title, 'Sign up') %>
 <h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Sign up</h1>
+    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"></h1>
 
 <div>
   <div class="inline">
-
-    <%= form_for(@user) do |f| %>
+     <table>
+       <caption> Sign Up </caption>
+      <%= form_for(@user) do |f| %>
       <%=  render 'shared/error_messages', object: f.object %>
-      <br/> <%= f.label :name %>
-       <br/> <%= f.text_field :name %>
+      <tr>
+       <th> Name</th>
+       </tr>
+       <tr>
+       <td><%= f.text_field :name %></td>
+       </tr>
+       <tr>
+        <th> Email</th>
+       </tr>
+       <tr>
+       <td><%= f.text_field :email %> </td>
+       </tr>
+       <tr>
+       <th> Location</th>
+       </tr>
+       <tr>
+         <td><%= f.select :location, options_for_select(["select County",
+                                                         "Carlow",
+                                                         "Dublin",
+                                                         "Kildare",
+                                                         "Kilkenny",
+                                                         "Laois",
+                                                         "Longford",
+                                                         "Louth",
+                                                         "Meath",
+                                                         "Offaly",
+                                                         "Westmeath",
+                                                         "Wexford",
+                                                         "Wicklow"], :class=>'genForm_dropBox') %> </td>
+         </tr>
+         <tr>
+           <th> Password</th>
+         </tr>
+         <tr>
+           <td><%= f.password_field :password %></td>
+         </tr>
+         <tr>
+           <th> Password Confirmation</th>
+         </tr>
+         <tr>
+           <td><%= f.password_field :password_confirmation %> </td>
+         </tr>
+         <tr>
+           <td><%= f.submit "Create my account", class: "btn btn-large btn-primary" %> </td>
+         </tr>
+       </table>
 
 
-      <br/><%= f.label :email %>
-       <br/> <%= f.text_field :email %>
 
-       <br/> <%= f.label :location %>
-        <br/><%= f.text_field :location %>
-
-       <br/><%= f.label :password %>
-       <br/> <%= f.password_field :password %>
-
-       <br/><%= f.label :password_confirmation, "Password Confirmation" %>
-       <br/><%= f.password_field :password_confirmation %>
-
-       <br/><%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-
-
-    <% end %>
+     <% end %>
 
   </div>
 </div>

@@ -13,12 +13,13 @@ class ContractorsController < ApplicationController
 
   def create
     @contractor = Contractor.new(params[:contractor])
-    if @contractor.save
-      redirect_to root_path
-    else
-      render 'new'
+    if@contractor.save
+     redirect_to root_path
+
+     else
+       render 'new'
 
 
-    end
+  end
   end
 end

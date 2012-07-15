@@ -5,3 +5,45 @@
         float:right;
         width: 60%
          }
+
+table {caption-side: top;
+       font-weight: bold;
+       margin:1em 1em 1em 1em;
+       border-spacing: 15px 0px;
+       }
+
+th {
+    margin:.5em .5em .5em .5em;
+    border: solid gray;
+    border-width:.1em;
+    color:blue;
+   }
+
+td{margin:1em 1em 1em 1em;
+   padding:.25em .25em .25em .25em;
+   border: solid gray;
+   border-width:.1em;
+  }
+
+h2 {text-align:left}
+
+.inline table {caption-side: top;
+               font-weight: bold;
+                margin:1em 1em 1em 1em;
+               border-spacing: 15px 0px;}
+
+.inline table caption { font-size:3em;
+                        margin: .25em .25em 1em .25em;
+                        color:blue;}
+.inline table th { border:none;
+                   color:black;
+                   text-align:left;
+                  }
+
+.inline table td { border:none;
+  color:black;
+}
+
+
+
+
