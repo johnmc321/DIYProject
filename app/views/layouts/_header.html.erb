@@ -8,7 +8,7 @@
         <li><%= link_to "Products", store_path %></li>
 
         <% if signed_in? %>
-            <li><%= link_to "Basket", your_cart_path %></li>
+            <li><%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %></li>
             <li><%= link_to "Users", '#' %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
