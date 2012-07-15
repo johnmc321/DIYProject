@@ -9,8 +9,15 @@
       <%= image_tag(product.image_url) %>
       <h3><%= product.title %></h3>
       <%= sanitize(product.description) %>
+      <p>Category:<%= product.category %></p>
       <div class="price_line">
-        <span class="price"><%= number_to_currency(product.price) %></span>
+
+        <!--
+        # Date 15.07.12
+        # @author John McCormack, x12100323
+        # @reference http://stackoverflow.com/questions/8416587/rails-number-to-currency-foreign-currencies-query
+         -->
+        <span class="price"><%= number_to_currency(product.price, :unit => "€") %></span>
 
         <% if signed_in? %>
             <%= button_to 'Add to Basket', line_items_path(product_id: product) %>
@@ -20,5 +27,15 @@
         <% end %>
 
       </div>
+
     </div>
+
+<% end %>
+<br/>
+<%= form_tag products_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search_query,
+                         params[:search_query] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
 <% end %>

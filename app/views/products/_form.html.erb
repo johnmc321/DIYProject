@@ -30,7 +30,7 @@
 
     <div class="field">
       <%= f.label :category %><br />
-      <%= f.text_field :category %>
+      <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
     </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,6 +1,6 @@
 
 class StoreController < ApplicationController
   def index
-    @products = Product.order(:title)
+    @products = Product.search(params[:search_query])
   end
 end

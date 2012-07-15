@@ -1,5 +1,6 @@
 <% provide(:title, @user.name) %>
 
+<<<<<<< HEAD
 <table>
   <caption>Customer Details</caption>
   <tr>
@@ -7,7 +8,7 @@
     <th> Email</th>
     <th> Location </th>
    </tr>
-  <tr>
+
 
   <tr>
     <td> <%= @user.name %> </td>
@@ -35,3 +36,36 @@
    </tr>
     <%end %>
 </table>
+=======
+<h3>User Details:</h3> <br/>
+ <ul>
+    <li>Name: <%= @user.name %></li><br/>
+    <li>Email: <%= @user.email %></li><br/>
+    <li>Location: <%= @user.location%></li><br/>
+</ul><br/>
+
+<h3>Previous Orders:</h3><br/>
+    <%= @user.orders(params[:order_id]) %><br/>
+<br/>
+
+<h3>Quotation Requests:</h3>
+
+<% @quotation.each do|quotation|%> <br/>
+    <b>Date Submitted: </b><%= quotation.created_at %><br/>
+    <b>Name: </b><%= quotation.name %><br/>
+    <b>Email: </b><%=  quotation.email%> <br/>
+    <b>Location: </b><%= quotation.location%> <br/>
+    <b>Job Type: </b><%= quotation.jobtype%> <br/>
+    <b>Contractor: </b><%= quotation.contractor_id%>
+    <br/>
+
+ <%end %>
+
+
+
+
+
+
+
+
+>>>>>>> 37251a220c218ad1db832ac75fe99c34a78c8915
