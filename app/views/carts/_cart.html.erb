@@ -1,0 +1,21 @@
+<div class="cart_title">Order Details:</div>
+<table>
+<!-- START_HIGHLIGHT -->
+  <%= render(cart.line_items) %>
+<!-- END_HIGHLIGHT -->
+
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+<!-- START_HIGHLIGHT -->
+    <td class="total_cell"><%= number_to_currency(cart.total_price, :unit => '&euro;') %></td>
+    <td><%= button_to 'Empty cart', cart, method: :delete,
+            #END_HIGHLIGHT
+            confirm: 'Are you sure?' %></td>
+<!-- END_HIGHLIGHT -->
+  </tr>
+
+</table>
+
+<!-- START_HIGHLIGHT -->
+
+
