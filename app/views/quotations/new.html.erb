@@ -1,42 +1,73 @@
 <%= provide(:title, 'Quotation Request') %>
 <h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Quotation Request</h1>
+    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"></h1>
 
 <div>
 
   <div class="inline" >
+    <table>
+      <caption>Quotation </caption>
 
     <%= form_for(@quotation) do |f| %>
         <%=  render 'shared/error_messages', object: f.object %>
+          <tr>
+          <th> Name</th>
+          </tr>
+          <tr>
+            <td><%= f.text_field :name, :value=>current_user.name, :style => "color:blue" %></td>
+          </tr>
 
-         <%= f.label :name %>  <br/>
-        <%=  f.text_field :name, :value=>current_user.name %><br/>
-         <%= f.label :email %> <br/>
-          <%= f.text_field :email, :value=>current_user.email %><br/>
-         <%= f.label :location %> <br/>
-        <%= f.select :location, options_for_select(["select County",
-                                                    "Carlow",
-                                                    "Dublin",
-                                                    "Kildare",
-                                                    "Kilkenny",
-                                                    "Laois",
-                                                    "Longford",
-                                                    "Louth",
-                                                    "Meath",
-                                                    "Offaly",
-                                                    "Westmeath",
-                                                    "Wexford",
-                                                    "Wicklow"], :class=>'genForm_dropBox') %>
-          <%= f.label :description %><br/>
-          <%= f.text_area :description %><br/>
-          <%= f.label :jobtype, "Please select the general job type" %> <br/>
-           <%= f.select :jobtype, options_for_select(["select one",  "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"], :class=>'genForm_dropBox') %>
+          <tr>
+          <th>Email</th>
+          </tr>
+          <tr>
+            <td><%= f.text_field :email, :value=>current_user.email, :style => "color:blue" %></td>
+          </tr>
 
 
-        <p>  <%= f.submit "Submit Request", class: "btn btn-large btn-primary" %> </p>
-
-
+          <tr>
+            <th> Location</th>
+          </tr>
+          <tr>
+            <td><%= f.select :location, options_for_select(["select County",
+                                                            "Carlow",
+                                                            "Dublin",
+                                                            "Kildare",
+                                                            "Kilkenny",
+                                                            "Laois",
+                                                            "Longford",
+                                                            "Louth",
+                                                            "Meath",
+                                                            "Offaly",
+                                                            "Westmeath",
+                                                            "Wexford",
+                                                            "Wicklow"], :class=>'genForm_dropBox') %> </td>
+          </tr>
+          <tr>
+            <th> location</th>
+           </tr>
+          <tr>
+            <td> <%=  f.collection_select :contractor_id, Contractor.find(:all, :conditions => {:location => current_user.location}), :id, :location%></td>
+          </tr>
+          <tr>
+            <th> Job Description </th>
+          </tr>
+          <tr>
+            <td><%= f.text_area :description, :size => "15x10" %></td>
+           </tr>
+          <tr>
+            <th> Please select general job type </th>
+          <tr>
+            <td><%= f.select :jobtype,
+                             options_for_select(["select one",  "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
+                                                :class=>'genForm_dropBox'), onBlur="updateContractors();" %>
+           </td>
+          </tr>
+          <tr>
+          <td>  <%= f.submit "Submit Request", class: "btn btn-large btn-primary" %> </td>
+           </tr>
     <% end %>
+  </table>
 
 
   </div>
