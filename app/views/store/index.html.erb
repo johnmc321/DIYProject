@@ -8,8 +8,8 @@
     <div class="entry">
       <%= image_tag(product.image_url) %>
       <h3><%= product.title %></h3>
-      <%= sanitize(product.description) %>
-      <p>Category:<%= product.category %></p>
+      <p><%= sanitize(product.description) %></p>
+      <p>Category:<%= product.category_id %></p>
       <div class="price_line">
 
         <!--
@@ -32,10 +32,15 @@
 
 <% end %>
 <br/>
-<%= form_tag products_path, :method => 'get' do %>
+
+
+
+
+<%= form_tag store_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search_query,
                          params[:search_query] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
+
 <% end %>

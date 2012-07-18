@@ -30,6 +30,7 @@ ProjectMain::Application.routes.draw do
   match '/store/index', to: 'store#index', as: 'store'
   match '/your_cart', to: 'carts#your_cart', as: 'your_cart'
   match '/contractors', to: 'contractors#new'
+  match '/thankyou', to: 'projectmain#thank_you'
 
 
   # The priority is based upon order of creation:

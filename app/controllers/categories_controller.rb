@@ -22,6 +22,11 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def display
+    @category = Category.find(params[:id])
+    @products = Product.find(:all, :conditions => {:category_id => current_category_id})
+  end
+
   # GET /categories/new
   # GET /categories/new.json
   def new
