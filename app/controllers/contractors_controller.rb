@@ -8,7 +8,7 @@ class ContractorsController < ApplicationController
   end
 
   def show
-    @contractor = Contractor.find(params[:id])
+    @contractor = Contractor.find(:all)
   end
 
   def create
@@ -18,8 +18,34 @@ class ContractorsController < ApplicationController
 
      else
        render 'new'
+     end
+  end
+
+ def edit
+   @contractor=Contractor.find(params[:id])
+ end
+
+ def update
+   @contractor = Contractor.find(params[:id])
+   if @contractor.update_attributes(params[:contractor])
+     flash[:success] = "Contractor Updated"
+     redirect_to display_all_path
+   else
+     render 'edit'
+   end
+ end
 
 
-  end
-  end
+
+  def destroy
+      @contractor = Contractor.find(params[:id])
+        @contractor.destroy
+
+        respond_to do |format|
+          format.html { redirect_to display_all_path}
+          format.json { head :no_content }
+        end
+   end
+
+
 end

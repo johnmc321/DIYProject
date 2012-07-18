@@ -18,7 +18,7 @@ ProjectMain::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :quotations, only: [:new, :create, :destroy, :show]
-  resources :contractors, only: [:new, :create, :destroy, :show]
+  resources :contractors, only: [:new, :create, :destroy, :update, :edit, :show]
 
   root :to => 'projectmain#home'
   match '/signup', to: 'users#new'
@@ -30,6 +30,8 @@ ProjectMain::Application.routes.draw do
   match '/store/index', to: 'store#index', as: 'store'
   match '/your_cart', to: 'carts#your_cart', as: 'your_cart'
   match '/contractors', to: 'contractors#new'
+  match '/display_all', to: 'contractors#show'
+  match '/display_edit', to: 'contractors#edit'
   match '/thankyou', to: 'projectmain#thank_you'
 
 

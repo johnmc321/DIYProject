@@ -1,0 +1,30 @@
+<% provide(:title, "Edit Contractor Details") %>
+<h1>Edit Contractor Details</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <table>
+      <tr>
+        <th> Name</th>
+        <th> Address</th>
+        <th> Email</th>
+        <th> Skill</th>
+      </tr>
+      <tr>
+
+    <%= form_for(@contractor) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+
+       <td><%= f.text_field :name %></td>
+       <td> <%= f.text_field :location %></td>
+       <td> <%= f.text_field :email %></td>
+       <td> <%=  f.text_field :jobtype %></td>
+       </tr>
+       <tr>
+       <td> <%= f.submit "Save changes", class: "btn btn-large btn-primary" %> </td>
+    <% end %>
+    </table>
+
+  </div>
+</div>

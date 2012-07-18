@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717191226) do
+ActiveRecord::Schema.define(:version => 20120718093520) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -76,18 +76,16 @@ ActiveRecord::Schema.define(:version => 20120717191226) do
     t.integer  "contractor_id"
   end
 
-  add_index "quotations", ["user_id", "created_at"], :name => "index_quotations_on_user_id_and_created_at"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "string"
     t.string   "email"
-    t.integer  "quotation_id"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "location"
     t.string   "remember_token"
+    t.integer  "quotation_id"
     t.boolean  "admin",           :default => false
     t.integer  "order_id"
   end

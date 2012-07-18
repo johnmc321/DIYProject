@@ -1,5 +1,29 @@
-<%= @contractor.id %>
-<%= @contractor.name %> ,
-<%= @contractor.email %> ,
-<%= @contractor.jobtype %> ,
-<%= @contractor.location %>
+
+<div class="row">
+  <div class="span6 offset3">
+<table id="Contractors">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Skill</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @contractor.each do |contractor| %>
+      <tr>
+        <td><%= contractor.id %></td>
+        <td><%= contractor.name %></td>
+        <td><%= contractor.location %></td>
+        <td><%= contractor.email %></td>
+        <td><%= contractor.jobtype %></td>
+        <td><%= link_to 'Edit', edit_contractor_path(contractor)%></td>
+        <td><%= link_to 'Destroy', contractor, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+  <% end %>
+  </table>
+  </div>
+ </div>
