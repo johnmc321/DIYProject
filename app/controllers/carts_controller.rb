@@ -1,14 +1,7 @@
 
 class CartsController < ApplicationController
 
-<<<<<<< HEAD
-  def your_cart
-    redirect_to :action => "show", :id => current_cart.id
 
-  end
-
-=======
->>>>>>> 207accfc3eec206cb72f8e33563f4c4870b03218
   # GET /carts
   # GET /carts.json
   def index
