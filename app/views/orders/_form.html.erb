@@ -12,32 +12,32 @@
     <% end %>
 
 
-    <div class="field">
+    <div class="orderfield">
       <%= f.label :name %><br />
       <!-- START_HIGHLIGHT -->
       <%= f.text_field :name, :value=>current_user.name %>
       <!-- END_HIGHLIGHT -->
     </div>
-    <div class="field">
+    <div class="orderfield">
       <%= f.label :address %><br />
       <!-- START_HIGHLIGHT -->
       <%= f.text_area :address, rows: 3, cols: 40, :value=>current_user.location %>
       <!-- END_HIGHLIGHT -->
     </div>
-    <div class="field">
+    <div class="orderfield">
       <%= f.label :email %><br />
       <!-- START_HIGHLIGHT -->
       <%= f.email_field :email, size: 40, :value=>current_user.email %>
       <!-- END_HIGHLIGHT -->
     </div>
-    <div class="field">
+    <div class="orderfield">
       <%= f.label :pay_type %><br />
       <!-- START_HIGHLIGHT -->
       <%= f.select :pay_type, Order::PAYMENT_TYPES,
                    prompt: 'Select a payment method' %>
       <!-- END_HIGHLIGHT -->
     </div>
-    <div class="actions">
+    <div class="orderactions">
       <!-- START_HIGHLIGHT -->
       <%= f.submit 'Place Order' %>
       <!-- END_HIGHLIGHT -->

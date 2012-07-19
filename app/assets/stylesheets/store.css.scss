@@ -5,7 +5,9 @@
 /* START_HIGHLIGHT */
 .store {
   h1 {
-    margin: 0;
+    float: left;
+    text-align: center;
+    margin: 1em;
     padding-bottom: 0.5em;
     font:  150% sans-serif;
     color: #226;
@@ -14,6 +16,7 @@
 
 /* An entry in the store catalog */
   .entry {
+    clear: both;
     overflow: auto;
     margin-top: 1em;
     border-bottom: 1px dotted #77d;

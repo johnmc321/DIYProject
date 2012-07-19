@@ -6,6 +6,8 @@
 .carts {
   .cart_title {
     font: 120% bold;
+    font-family: arial;
+    color: #226;
   }
 
   .item_price, .total_line {
@@ -15,6 +17,7 @@
   .total_line .total_cell {
     font-weight: bold;
     border-top: 1px solid #595;
+    background-color: #adff2f;
   }
 }
 /* END_HIGHLIGHT */
