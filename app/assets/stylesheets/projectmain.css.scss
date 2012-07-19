@@ -7,17 +7,20 @@
   padding: 10px;
   border-bottom: 2px solid;
   color: #eaeaea;
-  text-align: center;
+
 }
-#diyhead h1 {font: small-caps 40px/40px "Times New Roman", serif;
+#diyhead h1 {font: small-caps 50px/30px "Times New Roman", serif;
   color: #282;
   text-align: left;
-  margin-left: 30%;
+  margin-left: 35%;
+  margin-top: 1em;
 }
 
  #diyhead ~ p{text-align: center;
-             font: small-caps 15px/15px "Times New Roman", serif;
-              color:black;}
+              font: small-caps 15px/15px "Times New Roman", serif;
+              color:black;
+              margin-top: 3em;
+              margin-bottom: 3em;}
 #Leftcolumn{
 
   float: left;
@@ -29,8 +32,9 @@
   bottom: 0;
   left:0;
   background: #eaeaea;
-/*  background: #add8e6; */
 }
+
+
 
 
 

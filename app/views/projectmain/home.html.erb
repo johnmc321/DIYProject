@@ -8,7 +8,8 @@
   </head>
 <body>
 <div id="diyhead">
-<h1> DO IT YOURSELF or NOT</h1>
+<h1> D<span style=font-size:.75em>o</span> I<span style=font-size:.75em>t</span> Y<span style=font-size:.75em>ourself</span>
+          or NOT</h1>
 </div>
 <p> We aim to solve any of your DIY problems,
   from soldering to plumbing.<br/>  Let us show you how the work should be
@@ -17,13 +18,13 @@
 
 
 
-</ul>
+
 
 
 <div id="Leftcolumn">
 
  <ul>
-    <li>Soldering</a></li>
+    <li><a href="http://www.youtube.com/embed/lPMHJOgm76M" target="source"> Soldering</a> </li>
     <ul>
 
       <li><%= link_to "Required Tools", categories_path %></li>
@@ -35,19 +36,18 @@
 
  </ul>
   <ul>
-    <li> <a href="http://www.youtube.com/embed/lPMHJOgm76M"  target="source">Tiling</a></li>
+    <li> <a href="http://www.youtube.com/embed/LbPO8shSPoU" target="source">Tiling</a></li>
     <ul>
-      <!--<li> <a href="frame2.html"  target="source">Required Tools </a> </li>-->
       <li><%= link_to "Required Tools", categories_path %></li>
       <% if signed_in? %>
           <li><%= link_to "Request a Quotation", quotations_path %></li>
       <% end %>
 
     </ul>
-           </ul>
+    </ul>
 
   <ul>
-    <li> <a href="http://www.youtube.com/embed/lPMHJOgm76M"  target="source">Decking</a></li>
+    <li> <a href="http://www.youtube.com/embed/SNr4ysLaMcc" target="source">Decking</a></li>
     <ul>
       <!--<li> <a href="frame2.html"  target="source">Required Tools </a> </li>-->
       <li><%= link_to "Required Tools", categories_path %></li>
@@ -64,8 +64,7 @@
 <div id ="Rightcolumn">
   <table class="table_id">
     <tr>
-      <td><iframe name="source" src="http://www.youtube.com/embed/lPMHJOgm76M"  width="600px" height="400px"></iframe>
-
+      <td><iframe name="source" width="600px" height="400px"></iframe>
       </td>
 
     </tr>
