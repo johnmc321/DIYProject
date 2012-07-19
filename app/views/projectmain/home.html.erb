@@ -24,10 +24,10 @@
 <div id="Leftcolumn">
 
  <ul>
-    <li><a href="http://www.youtube.com/embed/lPMHJOgm76M" target="source"> Soldering</a> </li>
+    <li>Soldering</li>
     <ul>
-
-      <li><%= link_to "Required Tools", categories_path %></li>
+      <li><a href="http://www.youtube.com/embed/lPMHJOgm76M" target="source">"How To" video</a></li>
+      <li><%= link_to "Required Tools", soldering_path %></li>
       <% if signed_in? %>
       <li><%= link_to "Request a Quotation", quotations_path %></li>
           <% end %>
@@ -36,9 +36,10 @@
 
  </ul>
   <ul>
-    <li> <a href="http://www.youtube.com/embed/LbPO8shSPoU" target="source">Tiling</a></li>
+    <li>Tiling</li>
     <ul>
-      <li><%= link_to "Required Tools", categories_path %></li>
+      <li> <a href="http://www.youtube.com/embed/LbPO8shSPoU" target="source">"How To" video</a></li>
+      <li><%= link_to "Required Tools", tiling_path %></li>
       <% if signed_in? %>
           <li><%= link_to "Request a Quotation", quotations_path %></li>
       <% end %>
@@ -47,10 +48,10 @@
     </ul>
 
   <ul>
-    <li> <a href="http://www.youtube.com/embed/SNr4ysLaMcc" target="source">Decking</a></li>
+    <li>Decking</li>
     <ul>
-      <!--<li> <a href="frame2.html"  target="source">Required Tools </a> </li>-->
-      <li><%= link_to "Required Tools", categories_path %></li>
+      <li><a href="http://www.youtube.com/embed/SNr4ysLaMcc" target="source">"How To" video</a></li>
+      <li><%= link_to "Required Tools", decking_path %></li>
       <% if signed_in? %>
           <li><%= link_to "Request a Quotation", quotations_path %></li>
       <% end %>
