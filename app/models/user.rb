@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  #@reference Ruby on Rails Tutorial by Michael Hartl
   attr_accessible :email, :name, :password, :password_confirmation, :location, :admin
   has_secure_password
   has_many :quotations, dependent: :destroy

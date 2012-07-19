@@ -1,7 +1,7 @@
 
 class ContractorsController < ApplicationController
-
-
+#@author Enda McDonagh X12100871
+#@ref Ruby on Rails Tutorial - Michael Hartl
  def new
 
    @contractor = Contractor.new

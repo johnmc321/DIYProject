@@ -34,6 +34,7 @@ ProjectMain::Application.routes.draw do
   match '/display_edit', to: 'contractors#edit'
   match '/thankyou', to: 'projectmain#thank_you'
   match '/product_new', to: 'products#new'
+  match '/show_all',  to: 'users#show_all'
 
 
   # The priority is based upon order of creation:

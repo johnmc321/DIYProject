@@ -1,0 +1,29 @@
+<h1 id="change_color">All Users</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <table id="contractors">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Admin Status</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @user.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.location %></td>
+            <td><%= user.email %></td>
+            <td><%= user.admin %></td>
+            <td><%= link_to 'Edit', edit_user_path(user)%></td>
+            <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

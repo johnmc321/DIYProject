@@ -1,4 +1,4 @@
-
+ #@reference Ruby on Rails Tutorial Michael Hartl
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -9,7 +9,11 @@ class UsersController < ApplicationController
     @quotation = Quotation.find(:all, :conditions => {:user_id => current_user.id})
     @order = Order.find(:all, :conditions => {:user_id =>current_user.id})
 
-    end
+  end
+
+  def show_all
+    @user = User.find(:all)
+  end
 
 
   def create
@@ -35,6 +39,16 @@ class UsersController < ApplicationController
         redirect_to @user
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to show_all_path}
+      format.json { head :no_content }
     end
   end
 

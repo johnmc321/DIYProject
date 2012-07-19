@@ -1,4 +1,5 @@
-
+ #@author Enda McDonagh x12100871
+ #@reference Ruby on Rails Tutorial - Michael Hartl
 class QuotationsController < ApplicationController
   def new
    @quotation = Quotation.new
