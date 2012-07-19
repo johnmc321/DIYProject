@@ -22,8 +22,9 @@
         <% if signed_in? %>
             <%= button_to 'Add to Basket', line_items_path(product_id: product) %>
         <% else %>
-            <p><%= button_to 'To order, please sign in or create an account', signin_path %></p>
-
+            To order this item, please Sign in or Create a new account
+            <p><%= button_to 'Sign In', signin_path %>
+            <%= button_to 'Create an Account', signup_path %></p>
         <% end %>
 
       </div>

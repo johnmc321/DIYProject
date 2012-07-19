@@ -50,10 +50,12 @@ a:active{
 
 
 
-#banner{ width: 250px;
+#banner{
+    width: 100%;
     padding: .5em 0em .5em 2em;
-    margin-left: 40%;
-    background-color:#75152C;
+    margin-top: -.5em;
+    text-align: center;
+    background-color:#d3d3d3;
 
 }
 #Leftcolumn{
