@@ -1,10 +1,24 @@
 // Place all the styles related to the Contractors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-td{margin:1em 1em 1em 1em;
-  padding:.25em .25em .25em .25em;
-  border: none;
-  border-width:.1em;
-  font-weight:bold;
+ #contractors tr td{margin:1em 1em 1em 1em;
+                    padding:.25em .25em .25em .25em;
+                    border-color: #4B405E;
+                    border-width:.1em;
+                    font-weight:bold;
 
-}
+                   }
+
+#contractors{ float:left;
+              margin-left:40%;}
+
+#edit_contractor tr > td{ border:none;
+
+                       }
+#edit_contractor tfoot{ float:left;
+                       margin-left:150%;}
+
+.position {
+           float:right;
+           width: 58%
+           }

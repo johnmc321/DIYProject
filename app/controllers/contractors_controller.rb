@@ -3,8 +3,9 @@ class ContractorsController < ApplicationController
 
 
  def new
-   @contractor = Contractor.new
 
+   @contractor = Contractor.new
+   end
   end
 
   def show

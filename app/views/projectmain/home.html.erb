@@ -7,16 +7,14 @@
   <title>DIY or NOT</title>
   </head>
 <body>
-<h1 id="banner"> DO IT YOURSELF </h1>
-<p>Welcome to our website.  We aim to solve any of your DIY problems,
-  from soldering to plumbing.  Let us show you how the work should be
-  done.  We can provide the tools you need for the job, or we can put
+<div id="diyhead">
+<h1> DO IT YOURSELF or NOT</h1>
+</div>
+<p> We aim to solve any of your DIY problems,
+  from soldering to plumbing.<br/>  Let us show you how the work should be
+  done.<br/>  We can provide the tools you need for the job,<br/>or we can put
   you in touch with a reputable tradesperson who can do the job for you.</p>
-<ul>
-  <li><%=  link_to "Home", root_path %></li>
-  <%if !signed_in? %>
-  <li><%=  link_to "Register", signup_path %></li>
-      <%end%>
+
 
 
 </ul>

@@ -1,9 +1,9 @@
 <% provide(:title, "Edit Contractor Details") %>
-<h1>Edit Contractor Details</h1>
+<h1 id="change_color">Edit Contractor</h1>
 
 <div class="row">
   <div class="span6 offset3">
-    <table>
+    <table id="edit_contractor">
       <tr>
         <th> Name</th>
         <th> Address</th>
@@ -12,17 +12,33 @@
       </tr>
       <tr>
 
-    <%= form_for(@contractor) do |f| %>
+        <%= form_for(@contractor) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
 
        <td><%= f.text_field :name %></td>
-       <td> <%= f.text_field :location %></td>
+       <td><%= f.select :location, options_for_select(["Select County",
+                                                       "Carlow",
+                                                       "Dublin",
+                                                       "Kildare",
+                                                       "Kilkenny",
+                                                       "Laois",
+                                                       "Longford",
+                                                       "Louth",
+                                                       "Meath",
+                                                       "Offaly",
+                                                       "Westmeath",
+                                                       "Wexford",
+                                                       "Wicklow"], :class=>'genForm_dropBox') %></td>
        <td> <%= f.text_field :email %></td>
-       <td> <%=  f.text_field :jobtype %></td>
+       <td><%= f.select :jobtype, options_for_select(["Select One", "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
+                                                     :class=>'genForm_dropBox') %></td>
        </tr>
+       <tfoot>
        <tr>
        <td> <%= f.submit "Save changes", class: "btn btn-large btn-primary" %> </td>
+        </tr>
+       </tfoot>
     <% end %>
     </table>
 

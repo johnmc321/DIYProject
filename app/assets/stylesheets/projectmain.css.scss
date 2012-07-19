@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#diyhead {
+  background: #eaeaea;
+  padding: 10px;
+  border-bottom: 2px solid;
+  color: #eaeaea;
+  text-align: center;
+}
+#diyhead h1 {font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: left;
+  margin-left: 30%;
+}
+
+ #diyhead ~ p{text-align: center;
+             font: small-caps 15px/15px "Times New Roman", serif;
+              color:black;}
+#Leftcolumn{
+
+  float: left;
+  width: 250px;
+  height: 450px;
+  margin-left: 20%;
+  margin-right: 5%;
+
+  bottom: 0;
+  left:0;
+  background: #eaeaea;
+/*  background: #add8e6; */
+}
+
 
 
 
