@@ -28,7 +28,8 @@
                                                     "Wexford",
                                                     "Wicklow"], :class=>'genForm_dropBox') %>
         <%= f.label :jobtype, "Please select the general job type" %> <br/>
-        <%= f.select :jobtype, options_for_select(["select one", "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"], :class=>'genForm_dropBox') %>
+        <%= f.select :jobtype, options_for_select(["select one", "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
+                                                  :class=>'genForm_dropBox') %>
 
         <p>  <%= f.submit "Submit", class: "btn btn-large btn-primary" %> </p>
 

@@ -43,12 +43,7 @@
                                                             "Wexford",
                                                             "Wicklow"], :class=>'genForm_dropBox') %> </td>
           </tr>
-          <tr>
-            <th> location</th>
-           </tr>
-          <tr>
-            <td> <%=  f.collection_select :contractor_id, Contractor.find(:all, :conditions => {:location => current_user.location}), :id, :location%></td>
-          </tr>
+
           <tr>
             <th> Job Description </th>
           </tr>
@@ -60,7 +55,7 @@
           <tr>
             <td><%= f.select :jobtype,
                              options_for_select(["select one",  "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
-                                                :class=>'genForm_dropBox'), onBlur="updateContractors();" %>
+                                                :class=>'genForm_dropBox') %>
            </td>
           </tr>
           <tr>
