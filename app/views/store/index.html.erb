@@ -4,6 +4,8 @@
 
 <h1>Tools & Materials Catalogue</h1>
 
+
+
 <% @products.each do |product| %>
     <div class="entry">
       <%= image_tag(product.image_url) %>
@@ -12,12 +14,13 @@
       <p>Category:<%= product.category_id %></p>
       <div class="price_line">
 
-        <!--
+        <!-- <span class="price"...</span>
         # Date 15.07.12
         # @author John McCormack, x12100323
         # @reference http://stackoverflow.com/questions/8416587/rails-number-to-currency-foreign-currencies-query
          -->
-        <span class="price"><%= number_to_currency(product.price, :unit => "€") %></span>
+        <span class="price"><%= number_to_currency(product.price, :unit => "&euro;") %></span>
+
 
         <% if signed_in? %>
             <%= button_to 'Add to Basket', line_items_path(product_id: product) %>
@@ -25,6 +28,7 @@
             To order this item, please Sign in or Create a new account
             <p><%= button_to 'Sign In', signin_path %>
             <%= button_to 'Create an Account', signup_path %></p>
+
         <% end %>
 
       </div>
@@ -34,9 +38,6 @@
 <% end %>
 <br/>
 
-
-
-
 <%= form_tag store_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search_query,
@@ -45,3 +46,15 @@
     </p>
 
 <% end %>
+
+<li id="fat-menu" class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Search by Category <b class="caret"></b>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><%=  link_to "Soldering", soldering_path %></li>
+    <li><%=  link_to "Tiling", tiling_path %></li>
+    <li><%=  link_to "Decking", decking_path %></li>
+  </ul>
+

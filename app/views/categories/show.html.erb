@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <b>Name:</b>
+    <b>Category:</b>
     <%= @category.name %>
 </p>
 
-<p>
-    <b>Category ID:</b>
-    <%= @category.id %>
-</p>
 
 <p>
-    <b>Products:</b>
-    <%= @category.products %></p>
-</p>
+    <b>Tools:</b>
+    </p>
+
+<% @category.products.each do |product| %>
+    <ul>
+      <li><%= product.title %></li>
+    </ul>
+       <% end %>
+<br/>
+
+<p>To purchase any of these tools, visit our <%= link_to "Store", store_path %></p>
 
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+
+
+
+
+
