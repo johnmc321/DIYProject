@@ -1,4 +1,4 @@
-
+#@reference Ruby on Rails Tutorial - by Michael Hartl
 class SessionsController < ApplicationController
   def new
   end

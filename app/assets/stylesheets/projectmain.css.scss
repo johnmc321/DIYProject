@@ -3,17 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #diyhead {
-  background: #eaeaea;
   padding: 10px;
   border-bottom: 2px solid;
   color: #eaeaea;
+  width:100%;
 
 }
 #diyhead h1 {font: small-caps 50px/30px "Times New Roman", serif;
   color: #282;
-  text-align: left;
-  margin-left: 35%;
+  text-align: right;
+  margin-right: 40%;
   margin-top: 1em;
+  width:100%;
 }
 
  #diyhead ~ p{text-align: center;
