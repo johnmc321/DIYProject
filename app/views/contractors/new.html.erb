@@ -14,7 +14,7 @@
         <%= f.label :email %>
         <%= f.text_field :email %><br/>
         <%= f.label :location %>
-        <%= f.select :location, options_for_select(["select County",
+        <%= f.select :location, options_for_select(["Select One",
                                                     "Carlow",
                                                     "Dublin",
                                                     "Kildare",
@@ -28,7 +28,7 @@
                                                     "Wexford",
                                                     "Wicklow"], :class=>'genForm_dropBox') %> <br/><br/>
         <%= f.label :jobtype, "Please select the general job type" %>
-        <%= f.select :jobtype, options_for_select(["select one", "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
+        <%= f.select :jobtype, options_for_select(["Select One", "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
                                                   :class=>'genForm_dropBox') %>
 
         <p>  <%= f.submit "Submit", class: "btn btn-large btn-primary" %> </p>
