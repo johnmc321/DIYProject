@@ -29,7 +29,7 @@
             <th> Location</th>
           </tr>
           <tr>
-            <td><%= f.select :location, options_for_select(["select County",
+            <td><%= f.select :location, options_for_select(["Select One",
                                                             "Carlow",
                                                             "Dublin",
                                                             "Kildare",
@@ -54,7 +54,7 @@
             <th> Please select general job type </th>
           <tr>
             <td><%= f.select :jobtype,
-                             options_for_select(["select one",  "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
+                             options_for_select(["Select One",  "Tiler", "Builder", "Carpenter", "Decking", "Plumbing"],
                                                 :class=>'genForm_dropBox') %>
            </td>
           </tr>
