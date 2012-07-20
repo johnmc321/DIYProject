@@ -16,9 +16,38 @@
 </p>
 
 <p>
+  <b>Order ID:</b>
+  <%= @order.id %>
+</p>
+
+<p>
+  <b>Date Submitted:</b>
+  <%= @order.created_at %>
+</p>
+
+<p>
   <b>Pay type:</b>
   <%= @order.pay_type %>
 </p>
+
+<p>
+  <b>Items Ordered:</b>
+</p>
+<table>
+  <tr>
+    <th>Item Code</th>
+    <th>Quantity Ordered</th>
+  </tr>
+
+  <% @order.line_items.each do |line_item| %>
+   <tr>
+    <td><%= line_item.product_id %></td>
+    <td><%= line_item.quantity %></td>
+   </tr>
+<% end %>
+
+   </table>
+
 
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
