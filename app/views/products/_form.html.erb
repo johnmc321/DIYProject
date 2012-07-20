@@ -1,3 +1,4 @@
+<div id="product_form">
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,8 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+  <div id="me" class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
@@ -33,6 +35,8 @@
       <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
+
+        </div>

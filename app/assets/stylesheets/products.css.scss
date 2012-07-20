@@ -9,7 +9,6 @@
   }
 
   table tr td {
-    padding: 5px;
     vertical-align: top;
   }
 
@@ -51,20 +50,29 @@
 }
 
 
-.field {
-  text-align: center;
-}
-
 .field label p {
   font-style: bold;
 }
 
-.actions {
+
+
+.products h1 {
   text-align: center;
 }
 
-.products h1 {
+#listing {
   float: left;
   text-align: center;
 }
+
+
+#me {
+  clear: left;
+}
+
+#product_form {
+  margin-left: 30%;
+}
+
+
 /* END_HIGHLIGHT */
