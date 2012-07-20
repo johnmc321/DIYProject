@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <b>Category:</b>
-    <%= @category.name %>
+  <b>Category:</b>
+  <%= @category.name %>
 </p>
 
 
 <p>
-    <b>Tools:</b>
-    </p>
+  <b>Tools:</b>
+</p>
 
 <% @category.products.each do |product| %>
     <ul>
       <li><%= product.title %></li>
     </ul>
-       <% end %>
+<% end %>
 <br/>
 
 <p>To purchase any of these tools, visit our <%= link_to "Store", store_path %></p>

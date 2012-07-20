@@ -1,66 +1,66 @@
 <header class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-  <div class="container">
+  <div class="navbar-inner">
+    <div class="container">
 
-    <nav>
-      <ul class="nav pull-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Store", store_path %></li>
-        <%if !signed_in? %>
-            <li><%=  link_to "Register", signup_path %></li>
-        <%end%>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Store", store_path %></li>
+          <%if !signed_in? %>
+              <li><%=  link_to "Register", signup_path %></li>
+          <%end%>
 
-        <% if signed_in? %>
-            <li><%= link_to "Your Cart", your_cart_path %></li>
-            <% if current_user.admin? %>
-                <li><%= link_to "Orders", orders_path %></li>
+          <% if signed_in? %>
+              <li><%= link_to "Your Cart", your_cart_path %></li>
+              <% if current_user.admin? %>
+                  <li><%= link_to "Orders", orders_path %></li>
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Admin <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li><%=  link_to "Add Contractor", contractors_path %></li>
+                      <li><%=  link_to "Display Contractors", display_all_path %></li>
+                      <li><%=  link_to "Edit Contractor", display_all_path %></li>
+                      <li><%=  link_to "Delete Contractor", display_all_path %></li>
+                      <li><%=  link_to "Display all Users", show_all_path %></li>
+                      <li><%=  link_to "Delete a  User", show_all_path %></li>
+                      <li><%=  link_to "Edit User Details", show_all_path %></li>
+
+                    </ul>
+
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Products <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li><%=  link_to "View Products", products_path %></li>
+                      <li><%=  link_to "Add new product", product_new_path %></li>
+                    </ul>
+                  <li><%= link_to "Categories", categories_path %></li>
+              <% end  %>
+              </li>
+
               <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Admin <b class="caret"></b>
-              </a>
-
-              <ul class="dropdown-menu">
-                <li><%=  link_to "Add Contractor", contractors_path %></li>
-                <li><%=  link_to "Display Contractors", display_all_path %></li>
-                <li><%=  link_to "Edit Contractor", display_all_path %></li>
-                <li><%=  link_to "Delete Contractor", display_all_path %></li>
-                <li><%=  link_to "Display all Users", show_all_path %></li>
-                <li><%=  link_to "Delete a  User", show_all_path %></li>
-                <li><%=  link_to "Edit User Details", show_all_path %></li>
-
-              </ul>
-
-                <li id="fat-menu" class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Products <b class="caret"></b>
-                  </a>
-
-                  <ul class="dropdown-menu">
-                    <li><%=  link_to "View Products", products_path %></li>
-                    <li><%=  link_to "Add new product", product_new_path %></li>
-                  </ul>
-                <li><%= link_to "Categories", categories_path %></li>
-                <% end  %>
-            </li>
-
-               <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-        <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+          <% else %>
+              <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
   </div>
-</div>
 </header>
