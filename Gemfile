@@ -40,3 +40,10 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'will_paginate', '~> 3.0'
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
